@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
+    <style>
+        body {
+            background-color: #f3043b; /* Vermelho */
+            color: #000000; /* Preto */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .option {
+            padding: 10px 20px;
+            border: 2px solid #000000; /* Borda preta */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="question">Cuzinho hoje??</div>
+        <div id="options">
+            <div class="option" onclick="alert('Credo que delícia')">Sim</div>
+            <div class="option" id="noOption" onclick="moveBlock()">Não</div>
+        </div>
+    </div>
+
+    <script>
+        function moveBlock() {
+            var noOption = document.getElementById("noOption");
+            noOption.style.position = "absolute";
+            var maxX = window.innerWidth - noOption.clientWidth;
+            var maxY = window.innerHeight - noOption.clientHeight;
+            var newX = Math.floor(Math.random() * maxX);
+            var newY = Math.floor(Math.random() * maxY);
+            noOption.style.left = newX + "px";
+            noOption.style.top = newY + "px";
+        }
+    </script>
+</body>
+</html>
